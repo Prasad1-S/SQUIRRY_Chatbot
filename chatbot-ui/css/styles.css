@@ -1,0 +1,273 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(90, 90, 90, 0.5); 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    border: 2px solid whitesmoke;
+    box-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke;
+}
+
+.header {
+    background:linear-gradient(90deg, #181C14 0%, #ECDFCC 100%);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.chat-box {
+    height: 450px;
+    padding: 0px 15px;
+    overflow-y: auto;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    font-size: 20px;
+}
+#messages::-webkit-scrollbar {
+    width: 8px; /* Adjust width */
+}
+
+
+.message {
+    display: flex;
+    align-items: flex-start;  /* Align items at the top */
+    margin: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* User messages - Right side */
+.message.sent {
+    align-self: flex-end;  /* Push message to the right */
+    text-align: right;
+    background-color: #ECDFCC;
+    padding: 10px 15px;
+    border-radius: 20px 20px 0 20px;
+    max-width: 70%;
+}
+
+/* Bot messages - Left side */
+.message.received {
+    align-self: flex-start;  /* Push message to the left */
+    text-align: left;
+    background-color: #181C14;
+    padding: 10px 15px;
+    border-radius: 20px 20px 20px 0;
+    max-width: 70%;
+    color: white;
+}
+
+/* Message content */
+.message-content {
+    flex-grow: 1;
+    word-wrap: break-word;
+}
+.msgUser{
+    margin-right: 25px;
+}
+.msgBot{
+    margin-left: 10px;
+}
+
+/* Icon styling */
+.material-symbols-outlined {
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin-top: 3px;
+}
+
+/* User icon specific */
+.message.sent .material-symbols-outlined {
+    right: 5px;  /* Push to right */
+}
+
+/* Bot icon specific */
+.message.received .material-symbols-outlined {
+    left: 5px;  /* Push to left */
+}
+
+
+#messages::-webkit-scrollbar-track {
+    background: transparent; /* Makes the track transparent */
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent scrollbar */
+    border-radius: 10px; /* Rounded scrollbar */
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Slightly darker on hover */
+}
+
+
+.messages {
+    max-height: 450px; /* Adjust as needed */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input-area {
+    display: flex;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid whitesmoke;
+    box-shadow: 0 0 2.5px whitesmoke, 0 0 5px whitesmoke;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: rgba(90, 90, 90, 0.5); 
+    
+}
+#user-input {
+    outline: none; /* Removes blue outline on focus */
+}
+
+/* Send Button */
+.input-area button {
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: #ECDFCC;
+    color: #181C14;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-area button:hover {
+    background: #181C14;
+    color: #ECDFCC;
+}
+
+/* Send Icon Inside Button */
+#send-button .material-symbols-outlined {
+    font-size: 24px;
+}
+#send-button .material-symbols-outlined {
+    font-size: 24px;
+    display: inline-block;  /* Ensures it is visible */
+    color: inherit;  /* Uses button text color */
+}#send-button .material-symbols-outlined {
+    font-size: 24px;
+    display: inline-block;  
+    color: inherit;  
+    position: static; /* Avoids unwanted shifting */
+}
+.img{
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+/* Ensure it aligns within the message bubble */
+.message {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Keep the text and icon inside the message */
+.message-content {
+    display: inline-block;
+    max-width: 70%;
+    word-wrap: break-word!important;
+
+}
+html {
+    --s: 165px; /* control the size*/
+    --c1: #697565;
+    --c2: #3C3D37;
+    --c3: #181C14;
+    
+    --_l:#0000 calc(25%/3),var(--c1) 0 25%,#0000 0;
+    --_g:conic-gradient(from 120deg at 50% 87.5%,var(--c1) 120deg,#0000 0);
+    background:
+      var(--_g),var(--_g) 0 calc(var(--s)/2),
+      conic-gradient(from 180deg at 75%,var(--c2) 60deg,#0000 0),
+      conic-gradient(from 60deg at 75% 75%,var(--c1) 0 60deg,#0000 0),
+      linear-gradient(150deg,var(--_l)) 0 calc(var(--s)/2),
+      conic-gradient(at 25% 25%,#0000 50%,var(--c2) 0 240deg,var(--c1) 0 300deg,var(--c2) 0),
+      linear-gradient(-150deg,var(--_l)) var(--c3);
+    background-size: calc(0.866*var(--s)) var(--s);
+  }
+  .name{
+    color: white;
+    font-size: 70px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.typing-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between bot image and dots */
+}
+
+.typing-dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.typing-dots span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: gray;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite ease-in-out;
+}
+
+/* Animation Timing */
+.typing-dots span:nth-child(1) { animation-delay: 0s; }
+.typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+/* Ensure Bot Messages Align Correctly */
+.received-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between bot image and message */
+}
+
+.bot-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Fix Positioning Issue */
+.message.received {
+    justify-content: flex-start;
+    display: flex;
+}

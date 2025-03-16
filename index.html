@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--bot animation links-->
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <!--background links-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+    <!--css links-->
+    <link rel="stylesheet" href="bg.css">
+    <!--google font links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--google icon link-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
+</head>
+
+
+<body id="topology">
+
+    <!--bot placement-->
+    <style>
+        #bot-animation {
+            display: flex;
+            flex-direction: column; /* Mobile first */
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            padding: 20px;
+        }
+    
+        .lottie-container {
+            max-width: 100%;
+        }
+    
+        .lottie-container dotlottie-player {
+            width: 100%;
+            max-width: 400px; /* Limits size on larger screens */
+            height: auto;
+        }
+    
+        .para {
+        }
+    
+        .getStarted {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .material-symbols-outlined {
+            margin-left: 5px;
+        }
+    
+        /* Desktop View */
+        @media (max-width: 768px) {
+    .parag {
+        flex-direction: column; /* Stack image and text */
+        text-align: center;
+    }
+    .para{
+
+        width: 400px;
+    }
+    img{
+        margin-left: -25px;
+    }
+    .getStarted{
+        
+    margin-left: 45px;
+    }
+}
+    </style>
+
+
+
+    
+    <div id="bot-animation">
+        <div class="parag">
+            <div class="lottie-container">
+            <img src="./upscalemedia-transformed.png" height="450px">
+        </div>
+    
+        <div class="para">
+            <h2>Who is Squirry?</h2>
+            <p>Hello! Myself Squirry... I am Subhojeet Prasad’s personal AI chatbot, here to introduce you to my boss and showcase his skills, experience, and projects. Whether you're looking for technical expertise, or project links, I’ve got you covered. Ask me anything about my boss, and I’ll be happy to assist!</p>
+    
+            <a href="./chatbot-ui/index.html">
+                <button class="getStarted">Get Started 
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </button>
+            </a>
+        </div>
+        </div>
+        
+    </div>
+    
+    
+    </div>
+    
+
+    <!--background placement-->
+    
+</body>
+
+
+</html>

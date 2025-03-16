@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <!--google icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="header" style="display: flex; align-items: center; position: relative;">
+            <img src="./3C3D37.png" height="100px" style="border-radius: 50%;border: 3px solid white;">
+            <h1 style="position: absolute; left: 50%; transform: translateX(-50%); margin: 0;">SQUIRRY</h1>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="messages" id="messages">
+                <div class="message-sent">
+                    <p class="sent"></p>
+                </div>
+                <div class="message-received">
+                    <p class="recieved"></p>
+                </div>
+            </div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your message here..." />
+            <button id="send-button"><span class="material-symbols-outlined">
+                send
+                </span></button>
+        </div>
+    </div>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

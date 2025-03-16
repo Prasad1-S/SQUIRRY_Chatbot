@@ -1,0 +1,112 @@
+body{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    height: 100%;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Ensure vertical scrolling */
+}
+
+
+.getStarted {
+    font-family: "Poppins", sans-serif;
+    height: 100px;
+    width: 300px;
+    border-radius: 100px;
+    color: black;
+    font-size: 35px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #ECDFCC, #181C14);
+    background-size: 200% 100%; /* Expand gradient for animation */
+    border: 2px solid whitesmoke;
+    box-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke;
+    padding: 10px;
+    margin-left: 140px;
+    transition: all 0.3s ease; /* Applies slow transition */
+}
+
+.getStarted:hover {
+    background-position: -100% 0; /* Moves the gradient smoothly */
+    transform: scale(1.1);
+}
+
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a button{
+    cursor: pointer;
+}
+
+html {
+    --s: 165px; /* control the size*/
+    --c1: #697565;
+    --c2: #3C3D37;
+    --c3: #181C14;
+    
+    --_l:#0000 calc(25%/3),var(--c1) 0 25%,#0000 0;
+    --_g:conic-gradient(from 120deg at 50% 87.5%,var(--c1) 120deg,#0000 0);
+    background:
+      var(--_g),var(--_g) 0 calc(var(--s)/2),
+      conic-gradient(from 180deg at 75%,var(--c2) 60deg,#0000 0),
+      conic-gradient(from 60deg at 75% 75%,var(--c1) 0 60deg,#0000 0),
+      linear-gradient(150deg,var(--_l)) 0 calc(var(--s)/2),
+      conic-gradient(at 25% 25%,#0000 50%,var(--c2) 0 240deg,var(--c1) 0 300deg,var(--c2) 0),
+      linear-gradient(-150deg,var(--_l)) var(--c3);
+    background-size: calc(0.866*var(--s)) var(--s);
+  }
+  #bot-animation {
+    display: inline-flex;
+    position: relative;
+}
+
+/* Glowing shadow effect */
+.lottie-container {
+    width: 400px;
+    height: 400px;
+    filter: drop-shadow(0px 0px 20px whitesmoke); /* White glow effect */
+    animation: botGlow 1.5s infinite ease-in-out;
+}
+
+/* Pulsing animation */
+@keyframes botGlow {
+    0% {
+        filter: drop-shadow(0px 0px 10px whitesmoke);
+    }
+    50% {
+        filter: drop-shadow(0px 0px 25px whitesmoke);
+    }
+    100% {
+        filter: drop-shadow(0px 0px 10px whitesmoke);
+    }
+}
+.para{
+
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    width: 600px;
+}.parag {
+    margin-top: 8%;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    color: white; /* Ensures readability */
+    padding: 15px;
+    border-radius: 20px; /* Optional: Soft rounded edges */
+    width: fit-content;
+    border: 2px solid whitesmoke;
+    box-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke;
+    display: inline;
+    
+    /* Centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
