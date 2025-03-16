@@ -84,6 +84,10 @@ html {
         filter: drop-shadow(0px 0px 10px whitesmoke);
     }
 }
+
+img{
+    height:450px;
+}
 .para{
 
     font-size: 20px;
@@ -105,10 +109,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-img{
-    height:450px;
 }
 @media screen and (max-width: 768px) {
     .parag{
