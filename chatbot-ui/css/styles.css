@@ -271,3 +271,22 @@ html {
     justify-content: flex-start;
     display: flex;
 }
+
+@media screen and (max-width: 768px) {
+    
+    .message-content{
+        max-width: 70%!important;
+        word-wrap: break-word!important;
+    }
+    *{
+        font-size: 14px;
+    }
+    .head{
+        font-size: 30px;
+        margin-left: 50px!important;
+    }
+    .container{
+        margin-bottom: 50px!important;
+    }
+    
+}
