@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Backend URL
     const backendURL = "https://squirry-backend.onrender.com/send-message";
 
+    // Disclaimer Alert
+    alert("⚠️ Disclaimer: The backend might take a few moments to start. Please be patient.");
+
     // Function to add a message to the chatbox
     function addMessage(text, type) {
         const messageDiv = document.createElement("div");
@@ -25,25 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: "smooth" });
     }
 
-    // Function to check if backend is ready
-    async function isBackendReady() {
-        try {
-            const response = await fetch(backendURL, { method: "OPTIONS" });
-            return response.ok;
-        } catch (error) {
-            return false;
-        }
-    }
-
-    // Function to wait for backend startup
-    async function waitForBackend() {
-        alert("⏳ Backend is starting, please wait...");
-        while (!(await isBackendReady())) {
-            await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retrying
-        }
-        alert("✅ Backend is ready! You can now chat.");
-    }
-
     // Function to handle sending messages
     async function sendMessage() {
         const userText = userInput.value.trim();
@@ -54,12 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         addMessage(userText, "sent");
         userInput.value = "";
-
-        // Check if backend is ready before sending message
-        if (!(await isBackendReady())) {
-            await waitForBackend();
-            return;
-        }
 
         try {
             const response = await fetch(backendURL, {
@@ -92,7 +70,4 @@ document.addEventListener("DOMContentLoaded", function () {
             sendMessage();
         }
     });
-
-    // Check backend status on page load
-    waitForBackend();
 });
