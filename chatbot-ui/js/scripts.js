@@ -10,32 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const backendURL = "https://squirry-backend.onrender.com/send-message";
 
     // Function to add a message to the chatbox
-    function addMessage(text, type, isTemporary = false, isTyping = false) {
+    function addMessage(text, type) {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add("message", type);
 
-        if (isTyping) {
-            messageDiv.innerHTML = `
-                <div class="typing-container">
-                    <img class="bot-icon img" src="./3C3D37.png">
-                    <div class="typing-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                </div>
-            `;
-        } else {
-            messageDiv.innerHTML = type === "sent"
-                ? `<span class="message-content msgUser">${text}</span> <span class="material-symbols-outlined user-icon">account_circle</span>`
-                : `<div class="received-container">
-                      <img class="bot-icon img" src="./3C3D37.png">
-                      <span class="message-content msgBot">${text}</span>
-                   </div>`;
-        }
+        messageDiv.innerHTML = type === "sent"
+            ? `<span class="message-content msgUser">${text}</span> <span class="material-symbols-outlined user-icon">account_circle</span>`
+            : `<div class="received-container">
+                  <img class="bot-icon img" src="./3C3D37.png">
+                  <span class="message-content msgBot">${text}</span>
+               </div>`;
 
         messagesContainer.appendChild(messageDiv);
         messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: "smooth" });
-
-        return isTemporary ? messageDiv : null;
     }
 
     // Function to check if backend is ready
@@ -50,12 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to wait for backend startup
     async function waitForBackend() {
-        let message = addMessage("⏳ Starting server, please wait 30-50 seconds...", "received", true);
+        alert("⏳ Backend is starting, please wait...");
         while (!(await isBackendReady())) {
             await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retrying
         }
-        message.remove();
-        addMessage("✅ Server is ready! You can now chat.", "received");
+        alert("✅ Backend is ready! You can now chat.");
     }
 
     // Function to handle sending messages
@@ -69,11 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         addMessage(userText, "sent");
         userInput.value = "";
 
-        const typingMessage = addMessage("", "received", true, true);
-
         // Check if backend is ready before sending message
         if (!(await isBackendReady())) {
-            typingMessage.remove();
             await waitForBackend();
             return;
         }
@@ -86,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             const data = await response.json();
-            typingMessage.remove();
 
             if (!data || !data.reply) {
                 console.error("🚨 Error: Bot response is empty!");
@@ -99,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
             sendSound.play();
         } catch (error) {
             console.error("❌ Fetch Error:", error);
-            typingMessage.remove();
             addMessage("Oops! Something went wrong. 😕", "received");
         }
     }
